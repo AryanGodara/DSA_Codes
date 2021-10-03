@@ -107,14 +107,64 @@ int MSIS ( vector <int> &arr )  // Maximum sum increasing subarray
     return msis[x] ;
 }
 
+int MLBS ( vector <int> &arr )  // Maximum length of bitonic subsequence
+{   
+    // A subsequence that is first increasing, then decreasin (A peak)
+    
+    int n = arr.size() ;
+
+    // Find the Longest increasing subsequences from the left side of the array
+    // And then find the Longest Decreasing subsequences from the right side of the array.
+    // And then do a linear search at each element, whichever has the greatest sum of the 
+    // LIS and LDS, is the peak, of the long bitonic subsequence, and the sum of the corresponding
+    // LIS+LDS is our answer
+
+    vector <int> incr(n,1) , decr(n,1) ;    // Minimum subsequence is of length 1, for each case.
+        
+    for ( int i = 1 ; i < n ; i++ )     // LIS
+    {
+        for ( int j = 0 ; j < i ; j++ )
+        {
+            if ( arr[j] < arr[i] )
+                incr[i]  = max( incr[i] , incr[j]+1 ) ;
+        }
+    }
+
+    for ( int i = n-2 ; i >= 0 ; i-- )  // LDS
+    {
+        for ( int j = n-1 ; j > i ; j--)
+        {
+            if ( arr[j] < arr[i] )  // Subsequence should decrease as we move right
+            {
+                decr[i] = max( decr[i] , decr[j]+1 ) ;
+            }
+        }
+    }
+
+    int res = 1 ;   // The smallest possible answer
+
+    for ( int i = 0 ; i < n ; i++ )
+        res = max ( res , incr[i]+decr[i]-1 ) ; // -1 because arr[i] is added twice to the lists
+
+    return res ;
+
+    // We can also do this using the binary search approach, which is O(nlog(n))
+
+    // NOTE : Both increasing and decreasing sorted arrays, are also considered as bitonic.
+}
+
+
+
 int main ()
 {
     vector <int> arr1 = { 3 , 4, 2 , 8 , 10 } , arr2 = { 8 , 100 , 150 , 10 , 12 , 14 , 110 } ;
+    vector <int> arr3 = { 1 , 11 , 2 , 10 , 4 , 5 , 2 , 1 } ;
 
     cout << lis_DP(arr2) << endl ;
     cout << lis_BS(arr1) << endl ;
     cout << MSIS(arr1) << endl ;
     cout << MSIS(arr2) << endl ;
+    cout << MLBS(arr3) << endl ;
 
     return 0 ;
 }
