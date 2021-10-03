@@ -153,18 +153,59 @@ int MLBS ( vector <int> &arr )  // Maximum length of bitonic subsequence
     // NOTE : Both increasing and decreasing sorted arrays, are also considered as bitonic.
 }
 
+bool cmp ( pair<int,int> a , pair<int,int> b )
+{
+    if ( a.first != b.first )
+        return a.first < b.first ;
+    return a.second < b.second ;
+}
 
+int building_bridges ( vector < pair<int,int> > arr )
+{
+    // The maximum no. of bridges that can be build across a river such that no two bridges
+    // intersect with each other
+
+    // Steps :-
+    // 1. Sort the array, on the basis of teh first value of the pair. (Normal sort function will do)
+    // 2. Find the LIS of the sorted array, according to the second values. (So that the bridges)
+    //    don't intersect
+
+    sort(arr.begin(),arr.end(),cmp) ;
+
+    int n = arr.size() ;
+
+    vector <int> dp(n,1) ;
+
+    for ( int i = 1 ; i < n ; i++ )
+    {
+        for ( int j = 0 ; j < i ; j++ )
+        {
+            if ( arr[j].second < arr[i].second )
+            {
+                dp[i] = max( dp[i] , dp[j] + 1 ) ;
+            }
+        }
+    }
+
+    int res = 1 ;
+    for ( int i = 0 ; i < n ; i++ )
+        res = max ( res , dp[i] ) ;
+
+    return res ;
+}
 
 int main ()
 {
     vector <int> arr1 = { 3 , 4, 2 , 8 , 10 } , arr2 = { 8 , 100 , 150 , 10 , 12 , 14 , 110 } ;
     vector <int> arr3 = { 1 , 11 , 2 , 10 , 4 , 5 , 2 , 1 } ;
+    vector <pair<int,int>> bridges { {6,2} , {4,3} , {2,6} , {1,5} } ;
 
     cout << lis_DP(arr2) << endl ;
     cout << lis_BS(arr1) << endl ;
     cout << MSIS(arr1) << endl ;
     cout << MSIS(arr2) << endl ;
     cout << MLBS(arr3) << endl ;
+    cout << building_bridges(bridges) ;
 
     return 0 ;
 }
