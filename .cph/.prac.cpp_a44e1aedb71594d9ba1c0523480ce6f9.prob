@@ -1,0 +1,1 @@
+{"name":"Local: prac","url":"e:\\CPP_Programs\\prac.cpp","tests":[{"id":1626684402670,"input":"4\n1 0 0 0\n1 1 0 1\n0 1 0 0\n1 1 1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\prac.cpp","group":"local","local":true}

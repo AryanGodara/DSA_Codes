@@ -1,0 +1,1 @@
+{"name":"Local: modular_multipli_inverse","url":"e:\\CPP_Programs\\luv_CPP\\modular_multipli_inverse.cpp","tests":[{"id":1631329820195,"input":"4\n5 3\n7 5\n9 4\n3 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\luv_CPP\\modular_multipli_inverse.cpp","group":"local","local":true}

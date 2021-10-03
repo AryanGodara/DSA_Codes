@@ -1,0 +1,1 @@
+{"name":"Local: euclid_gcd_lcm","url":"e:\\CPP_Programs\\luv_CPP\\euclid_gcd_lcm.cpp","tests":[{"id":1625584919231,"input":"8 36","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\luv_CPP\\euclid_gcd_lcm.cpp","group":"local","local":true}

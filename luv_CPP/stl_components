@@ -1,0 +1,91 @@
+CONTAINERS :-
+Containers can be described as the objects that hold the data of the same type. Containers are used
+to implement different data structures for examples arrays, list, trees, etc.
+
+Classification of Containers :-
+1. Sequence Containers 
+    vector , deque , list
+2. Associative Containers
+    set , multiset , map , multimap
+3. Derived Containers
+    stack , queue , priority_queue
+
+Algorithms :-
+Algorithm are the functions are used across a varietyt of containers for processing its contents.
+
+Points to Remember :-
+1. Algorithms provide approx. 60 algorithm functions to perform functions to perform the complex
+   operations.
+2. Standard algorithms allow us to work with two different types of the container at the same time.
+3. Algorithms are not the member functions of a container, but they are the standalone template
+   functions.
+4. If we want to access the STL algorithms, we must include the <algorithm> header file.
+
+Nonmutating Algorithms
+These are the algorithms that don't alter any value of a container object nor do they change the 
+order of the elements in which they appear. These algorithms can be used for all container objects.
+
+Mutating Algorithms
+These are the algorithms that can be use to alter the value of a container. They can also be used to
+change the order of the elements in which they appear.
+
+Sorting Algorithms
+These are the modifying algorithms used to sorrt the elements in a container.
+
+Set Algorithms
+These are also nown as sorted range algorithms. This algorithm is used to perform some function on
+a container that greatly improves the efficiency of a program.
+
+Relational Algorithms
+These are the algorithms used to work on the numerical data. They are mainly designed to perform
+the mathematical operations to all the elements in a container.
+
+Function Objects 
+A function object is a function wrapped in a class so that it looks like an object. A function 
+object extends the characteristics of a regular function by using the feature of an object 
+oriented such as generic programming. Therefore, we can say that the function object is a smart 
+pointer that has many addvantages over the normal function.
+
+Following are the advantages of function objects over a regular function :
+1. Function objects can have member functions as well as member attributes.
+2. Function objects can be initialized before their usage.
+3. Regular functions can have different types only when the signature differs. Function objects can
+   have different types even when the signature is the same.
+4. Function objects are faster than the regular function.
+
+A function object is known as a 'functor'. A function object is an object that contains at least 
+one definition of operator() function. It means that if we declare declare the object 'd' of a 
+class in which operator() function is defined, we can use the object 'd' as a regular function.
+
+Suppose 'd' is an object of a class, operator() function can be called as :
+d() ;
+which is the same as:
+d.operator() ();
+
+Let's see a simple example
+# include <bits/stdc++.h>
+using namespace std ;
+
+class function_object
+{
+    public :
+    int operator() ( int a , int b )
+        return a+b ;
+} ;
+
+int main()
+{
+    function_object f ;
+    int result = f(5,5) ;
+    cout << "Addition of a and b is :" << result << endl ;
+
+    return 0 ;
+}
+
+O/P : Addition of a and b is : 10
+
+In the above example, 'f' is an object of a function_object class which contains the definition of 
+operator() function. Therefore, 'f' can be used as an ordinary function to call the operator() 
+function.
+
+ 
