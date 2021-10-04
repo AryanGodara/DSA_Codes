@@ -84,6 +84,10 @@ int lis_BS ( vector <int> &arr )    // Binary search has a time complexity of O(
     }
 
     return len ; // The tail array stores longest possible subsequence, atleast, length is the same
+
+    // Instead of using the ceil_index() function, which is essentially binary search, we can
+    // also use the built in lower_bound() function. In this case, int c will be equal to 
+    // int c = lower_bound(arr.begin(),arr.end(),arr[i]) - arr.begin() ;
 }
 
 int MSIS ( vector <int> &arr )  // Maximum sum increasing subarray
