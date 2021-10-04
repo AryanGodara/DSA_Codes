@@ -19,3 +19,9 @@
 9. git remote add origin <ssh url.git> 	// Replace the content inside the <> with your personal specific, ssh key
 
 10. git push origin master		// Now your project has reached github
+
+
+DIFFERENCES :-
+a. git add -A OR git add --a : Stages ALL changes
+b. git add . : Stages new files and modifications, WITHOUT DELETIONS(on the current directory and subdirectories)
+c. git add -u : Stages modifications and deletions, WITHOUT NEW FILES.
