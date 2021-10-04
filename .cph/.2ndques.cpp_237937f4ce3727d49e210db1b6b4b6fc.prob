@@ -1,1 +1,0 @@
-{"name":"Local: 2ndques","url":"e:\\CPP_Programs\\2ndques.cpp","tests":[{"id":1625466771516,"input":"6\n10 0\n0 10\n10 2\n0 0\n0 2\n10 10","output":"80"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\2ndques.cpp","group":"local","local":true}
