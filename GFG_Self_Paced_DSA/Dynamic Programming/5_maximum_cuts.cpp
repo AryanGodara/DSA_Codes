@@ -1,7 +1,22 @@
 # include <bits/stdc++.h>
 using namespace std ;
 
-int max_cuts ( int n , int a , int b , int c )
+int max_cuts_rec ( int n , int a , int b , int c )   // Vanilla Recursion Solution
+{
+    if ( n < 0 )        // This doesn't lead to a solution
+        return -1 ;
+    if ( !n )           // We have reached the end
+        return 0 ;
+
+    int res = max (max_cuts_rec(n-1,a,b,c),max(max_cuts_rec(n-b,a,b,c),max_cuts_rec(n-c,a,b,c))) ;
+
+    if ( res == -1 )    // We didn't find a solutoin
+        return res ;
+    
+    return (res+1) ;    // We found a solution
+}
+
+int max_cuts ( int n , int a , int b , int c )  // DP Solution
 {
     vector <int> dp(n+1) ;
 
