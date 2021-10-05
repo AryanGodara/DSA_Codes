@@ -21,6 +21,13 @@
 10. git push origin master		// Now your project has reached github
 
 
+rm -rf .git
+// run this command in the current directory, if you wish to remove the .git folder, and the entire git 'thing' from this directory
+// So this will no longer remain a git repository
+// rm -rf : is a Linux command that deletes content of a folder
+// and we write .git to specify which folder we have to delete(In this case, it's the .git repository)
+
+
 DIFFERENCES :-
 a. git add -A OR git add --a : Stages ALL changes
 b. git add . : Stages new files and modifications, WITHOUT DELETIONS(on the current directory and subdirectories)
