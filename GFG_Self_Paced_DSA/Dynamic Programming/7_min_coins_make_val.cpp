@@ -18,7 +18,7 @@ int get_min ( vector <int> coins , int n , int val )    // Vanilla Recursion Sol
             // minimum no. of ways to find val-coins[i] ,i.e., the remaining sum.
 
             if ( sub_res != INT_MAX )   // This means, we found a solution
-                res = min ( res , sub_res+1 ) ;   // Taking the minimum as the solution
+                res = min ( res , sub_res + 1 ) ;   // Taking the minimum as the solution
                 // sub_res + 1, because, we used 1 coin here, which was coins[i]
         }
     }
@@ -46,7 +46,7 @@ int get_min_DP ( vector <int> coins , int n , int val ) // Tabulation Solution
 
                 /*
                     OR, We can also write the code as :-
-                    itn sub_res = dp[i-arr[j]] ;
+                    int sub_res = dp[i-arr[j]] ;
                     if ( sub_res != INT_MAX && sub_res + 1 < dp[i] )
                         dp[i] = sub_res + 1 ;
                 */
