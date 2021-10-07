@@ -38,7 +38,9 @@ int knapsack_DP ( vector <int> &val , vector <int> &wt , int W , int n )    // T
 
 int main ()
 {
-    vector <int> val = { 10 , 40 , 30 , 50 }  , wt = { 5 , 4 , 6 , 3 } ;
+    vector <int> val = { 10 , 40 , 30 , 50 }  ;
+    vector <int> wt = { 5 , 4 , 6 , 3 } ;
+    
     int W = 10 , n = 4 ;
 
     cout << knapsack(val,wt,W,n) << endl ;
