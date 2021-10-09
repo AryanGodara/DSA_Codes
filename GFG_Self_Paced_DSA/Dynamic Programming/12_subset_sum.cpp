@@ -56,10 +56,15 @@ int solve_dp ( vector <int> &arr , int sum )
 // Driver Function
 int main ()
 {
-    vector <int> arr1 = {10,20,15} ;
+    ios_base::sync_with_stdio(false) ;
+    
+    vector <int> arr1 = {10,20,15} , arr2 = {2,5,3} ;
+    int sum1 = 25 , sum2 = 5 ;
 
-    cout << solve(arr1,arr1.size(),25) << endl ;
-    cout << solve_dp(arr1,25) << endl ;
+    cout << solve(arr1,arr1.size(),sum1) << endl ;
+    cout << solve_dp(arr1,sum1) << endl ;
 
+    cout << solve(arr2,arr2.size(),sum2) << endl ;
+    cout << solve_dp(arr2,sum2) << endl ;
     return 0 ;
 }
