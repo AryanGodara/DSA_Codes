@@ -159,7 +159,7 @@ int main ()
     cout.tie(NULL); 
 
     vector <char> arr1 = {  'a' ,  'd' ,  'e' ,  'f' } ;
-    vector <int> freq1 = {   30  ,  40  ,  80  , 60  } ;
+    vector <int> freq1 = {  30  ,  40  ,  80  ,  60  } ;
 
     vector <char> arr2 = {  'a' , 'd' , 'b' , 'e' , 'f' } ;
     vector <int> freq2 = {  10  , 50  , 20  , 40  , 80  } ;
