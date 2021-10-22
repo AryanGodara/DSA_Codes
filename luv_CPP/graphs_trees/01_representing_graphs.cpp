@@ -66,6 +66,5 @@ int main ()
         lists[v2].push_back({v1,wt}) ;  // Connected to v1 with weight wt
     }
 
-
-
+    return 0 ;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: 04_detect_cycle","url":"e:\\CPP_Programs\\luv_CPP\\graphs_trees\\04_detect_cycle.cpp","tests":[{"id":1634742717881,"input":"8 6\n1 2\n2 3\n3 1\n2 4\n3 5\n6 7","output":"true"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\luv_CPP\\graphs_trees\\04_detect_cycle.cpp","group":"local","local":true}
