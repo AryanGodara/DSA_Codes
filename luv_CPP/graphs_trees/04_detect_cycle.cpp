@@ -21,8 +21,6 @@ bool dfs ( int vertex , int parent )
 
         if ( visited[child] )   // We've already visited this child before, and it's not the parent
             return true ;
-        if ( visited[child] )
-            continue ;
 
         does_loop_exist |= dfs (child , vertex) ;
     }
@@ -36,6 +34,7 @@ int main ()
     cout.tie(NULL) ;
 
     // Creating a graph usnig Adjacency List
+
     int n , e ;     // No. of vertices , No. of edges
     cin >> n >> e ;
 
@@ -51,6 +50,7 @@ int main ()
     // components, and some of them may not form closed loops
 
     bool does_loop_exist = false ;
+    
     for ( int i = 1 ; i <= n ; i++ )
         does_loop_exist |= dfs(i,i) ;   // We can also use 'break' once we find a loop
 
