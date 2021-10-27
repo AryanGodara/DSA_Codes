@@ -28,7 +28,7 @@ void merge ( vector <int> &nums , int beg , int mid , int end )
 
 void merge_sort ( vector <int> & nums , int beg , int end )
 {
-    if ( end - beg <= 1 )   // Nothing to sort
+    if ( end - beg <= 1 )   // Nothing to sort 
         return ;
     
     int mid = beg + (end-beg)/2 ;
