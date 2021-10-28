@@ -33,5 +33,3 @@ int main ()
     return 0 ;
     // OP : Rahul 1001 88
 }
-
-/*Write the notes from GFG*/
