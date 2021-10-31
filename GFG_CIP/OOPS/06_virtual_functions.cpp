@@ -196,19 +196,56 @@ int main ()
 /*
 Override Keyword in C++ :-
 
-Function overriding is redefinitino of base class function in its derived class with same
+Function overriding is redefinition of base class function in its derived class with same
 signature.
 But there are situations when a programmer makes a mistake while overriding that function. So,
 to keep track of such an error, C++11 came up with the keyword override. It will make the 
 compiler to check the base class to see if there's a virtual function with this exact signature.
 And if there isn't, the compiler will show an error.
-
-// Write the two programs , and the remaining theory, from the open page on GFG
-0968557)(@^#$)(^#
-@#*@&#%_)@*#%^_@(#)*%^@(*#$&@%#^@(#*$
-2#)@#_%^@#)&@#%()@#%^*#@_%*&$#%$
-        (*#@&%)(@#*^%@(#)*%^&$#@^&%T!_(@^$&@#%^)&!@#_)!*^$(_!*@&#T%#(&^!#@$_(*&#!$^(_#%))))))
 */
+
+// A CPP Prgoram without override keyword. Here, programmer makes a mistake and isn't caught
+class base1
+{
+    public :
+    // User wants to override this in the derived class
+    virtual void func() { cout << "From base1\n" ; }
+};
+
+class derived1 : public base1
+{
+    public :
+    // Did a silly mistake by putting an argument 'int a'
+    void funct ( int a ) { cout << "From derived1\n" ; }
+};
+// This Compiles Successfulyy ^^^^^^^^^^^^^^^^^^
+
+
+// A CPP program that uses override keyword so that any difference in function signature
+// is caught during compilation.
+class base2
+{
+    public :
+    // User wants to override this in the derived class
+    virtual void func() 
+    { 
+        cout << "From base2\n" ; 
+    }
+};
+
+class derived2 : public base1
+{
+    public :
+    // Did a silly mistake by putting an argument 'int a'
+    void func ( int a ) override                // NOTICE THE OVERRIDE KEYWORD
+    { 
+        cout << "From derived2\n" ; 
+    }
+};
+// OP : Error ->
+// member function declared with 'override' does not override a base class member
+
+
 
 /*
 Function Overloading vs Function Overriding :-
