@@ -1,0 +1,16 @@
+Binary Heap
+    Used in Heap Sort
+    Used to implement Priority Queue
+
+    Two Types
+        Min Heap : Highest priority item is assigned lowest value
+        Max Heap : Highest priority item is assigned highest value
+    
+A Binary Heap is a complete Binary Tree : All of its levels are completely filled, except
+possibly the last level, and in that also, the elements must be filled continuously from
+left to right, and shoudn't have any gaps between them.
+Every node has value that is smaller than its descendants. (value should increase as we go down)
+Min Heap is internally represented as an array ( The binary tree is just for representation
+here ).
+
+// Write some more theory from the gfg page for minheap
