@@ -2,9 +2,7 @@
 using namespace std ;
 
 // By default, we use a max_heap, but a min_heap can also be used
-
-/* Also, make some notes from GFG_Text  
-
+/*
 Applications :-
     Dijkstra's Algorithm
     Prim Algorithm
@@ -67,7 +65,6 @@ int main ()
 
 // Using priority queue for user defined data types
 // Eg.: Sorting people according to their heights
-
 struct Person
 {
     int age ;
@@ -91,3 +88,18 @@ int main ()
 {
     priority_queue < Person , vector<Person> , cmp > pq ;
 }
+
+/*
+Priority Queues are a type of container adaptors, specifically
+designed such that th efirst element of the queue is the greatest
+of all elements in the queue, and the elements are in non-increasing order
+(hence, we can see that each elemnt of the queue has a priority {fixed order}).
+
+Methods of priority queue are :-
+1. empty() : returns whether the queue is empty
+2. size() : returns the size of the queue
+3. top() : returns a reference to the topmost element of the queue
+4. push(g) :  adds the element 'g' at the end of the queue
+5. pop() : deletes the first element of the queue
+6. swap() : used to swap the contents of one priority queue with another.
+*/
