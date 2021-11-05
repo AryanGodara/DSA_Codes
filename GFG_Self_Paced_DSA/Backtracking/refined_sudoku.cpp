@@ -22,7 +22,7 @@ bool isSafe ( int board[N][N] , int row , int col , int num )
     {
         for ( int d = boxColStart ; d < boxColStart + s ; d++ )
             if ( board[r][d] == num )
-                false ;
+                return false ;
     }
 
     return true ;

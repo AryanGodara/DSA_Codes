@@ -13,4 +13,11 @@ Every node has value that is smaller than its descendants. (value should increas
 Min Heap is internally represented as an array ( The binary tree is just for representation
 here ).
 
-// Write some more theory from the gfg page for minheap
+Operations on Min Heap :-
+1. getMin() : it returns the root element of min heap. T = O(1)
+2. extractMin() : Removes the minimum element from minheap. T = O(Log(n)) as this operation 
+needs to maintain the heap properly (by calling heapify()) after removing root.
+3. decreaseKey() : decreases value of key. T = O(Logn). If the decreased key value of a node 
+is greater than the parent of the node, then we don't need to do anything. Otherwise, we need 
+to traverse up to fix the violated heap properly.
+4. insert() , delete() : T = O(Log(n)).
