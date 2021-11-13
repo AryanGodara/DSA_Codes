@@ -123,7 +123,7 @@ int main ()
     // that it remains a valid min heap.
     cout << h.extract_min() << endl ;
 
-    // Decrease_key : Insert the given element, at the given position, and then, rearrage it
+    // Decrease_key : Insert the given element, at the given position, and then, rearrange it
     // such that it goes to its correct position in the min heap
     h.decrease_key ( 2 , 1 ) ;
 

@@ -7,10 +7,10 @@ using namespace std ;
 // Efficient Solution
 void k_closest ( vector <int> &arr , int x , int k )
 {
-    priority_queue< pair<int,int> > pq ;    // Can't make a min_heap for pairs lol
+    priority_queue< pair<int,int> > pq ; // Can't make a min_heap for pairs w/o structures lol
 
     for ( int i = 0 ; i < arr.size() ; i++ )
-        pq.push ( {-abs(x-arr[i]),i} ) ;    // So, storing the elements in -ve forms
+        pq.push ( {-abs(x-arr[i]),i} ) ; // So, storing the elements in -ve forms (jugaad)
     
     for ( int i = 0 ; i < k ; i++ )
     {

@@ -10,7 +10,7 @@ int main ()
     int sum = 10 ;      // OP = 2
     int n = 5 ; // Size of array
 
-    priority_queue < int , vector<int> , greater<int> > pq ;
+    priority_queue < int , vector<int> , greater<int> > pq ;    // Min Heap
 
     int res = 0 ;
 
@@ -19,7 +19,7 @@ int main ()
 
     for ( int i = 0 ; i < n ; i++ )
     {
-        if ( pq.top() < sum )   // We can include this min possible item in the solutino
+        if ( pq.top() < sum )   // We can include this min possible item in the solution
         {
             sum -= pq.top() ;
             pq.pop() ;
