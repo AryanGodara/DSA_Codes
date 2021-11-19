@@ -1,0 +1,1 @@
+{"name":"Local: 10_shortest_distance","url":"e:\\CPP_Programs\\luv_CPP\\graphs_trees\\10_shortest_distance.cpp","tests":[{"id":1637242384427,"input":"3\na1 h8\na1 c2\nh8 c3","output":"6\n1\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CPP_Programs\\luv_CPP\\graphs_trees\\10_shortest_distance.cpp","group":"local","local":true}

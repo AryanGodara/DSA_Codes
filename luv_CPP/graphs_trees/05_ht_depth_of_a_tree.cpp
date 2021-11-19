@@ -9,8 +9,8 @@ vector <bool> visited (N) ;
 
 vector <vector<int>> tree (N) ;
 
-vector <int> height (N) , depth(N) ;
-// Depth = Distance from root node, Height = Distance from respective root node
+vector <int> height (N) , depth(N) ;    // Initially, all heights are initialized to 0.
+// Depth = Distance from root node, Height = Distance from respective leaf node
 
 
 // The following code for dfs, will also work for trees. But since trees are much more 
@@ -42,8 +42,6 @@ void dfs_vanilla ( int vertex )
 // New dfs for Trees
 void dfs ( int vertex , int parent = 0 )    // A default value for the parent
 {
-
-
     for ( int child : tree[vertex] )
     {
         if ( child == parent )
@@ -56,9 +54,9 @@ void dfs ( int vertex , int parent = 0 )    // A default value for the parent
         height[vertex] = max ( height[vertex] , height[child] + 1 ) ; 
         // Height is 1 + max height of all the immediate children
     }
-
 }
 
+// Driver Function
 int main ()
 {
     ios_base :: sync_with_stdio (false) ;
