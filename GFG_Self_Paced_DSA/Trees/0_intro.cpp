@@ -14,6 +14,8 @@ struct Node
     }
 };
 
+// The three Functions below are different methods of printing graph using DFS
+
 void preorder ( Node *root )    // root left right
 {
     if ( !root)
@@ -66,19 +68,47 @@ void nodes_at_k_th_distance ( Node *root , int k )  // k = distance from root no
     nodes_at_k_th_distance(root->right,k-1) ;
 }
 
-int size_of_graph ( Node *root )
+int size_of_graph ( Node *root )    // No. of elements in graph
 {
     if ( !root )
         return 1 ;
     return 1 + size_of_graph(root->left) + size_of_graph(root->right) ;
 }
 
-int max_in_tree ( Node *root )
+int max_in_tree ( Node *root )      // Maximum Element in the Graph
 {
     if ( !root )
         return INT_MIN ;
 
     return max ( root->key , max ( max_in_tree(root->left) , max_in_tree(root->right) ) ) ;
+}
+
+// Max Width of a graph ( Max no of elements at a level (all having same depth) )
+int max_width ( Node *root )
+{
+    if ( !root )
+        return 0 ;
+    
+    queue <Node *> q ;
+    q.push(root) ;
+
+    int ans = 0 ;
+
+    while ( !q.empty() )
+    {
+        int cur = q.size() ;    // Currently, stores all elements of a single row
+        ans = max ( ans , cur ) ;
+
+        Node *cur_node = q.front() ;
+        q.pop() ;
+
+        if ( cur_node->left )   // Left subtree exists
+            q.push(cur_node->left) ;
+        if ( cur_node->right )   // Right subtree exists
+            q.push(cur_node->right) ;
+    }
+
+    return ans ;
 }
 
 // Driver Function

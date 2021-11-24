@@ -8,6 +8,7 @@
     And change right child of the previous node to current node and elft child of current
     node to previous node.
 */
+
 # include <bits/stdc++.h>
 using namespace std ;
 
@@ -37,26 +38,31 @@ void printList ( Node *head )
     cout << endl ;
 }
 
-// The Primary Utility Function
-Node * bt_to_dll ( Node *root )
+// The Primary Utility Function ( We're doing an inorder traversal )
+Node *bt_to_dll ( Node *root )  // Returns the head of the newly formed DLL
 {
     if ( root == NULL )
-        return root ;
+        return NULL ;
+    
+    static Node *prev = NULL ;  // Stays the same for each call to the function
 
-    static Node *prev = NULL ;
-
-    Node *head = bt_to_dll(head->left) ;
+    Node *head = bt_to_dll(root->left) ;    // Recursive Call to left sub-tree
 
     if ( prev == NULL )
-        head = root ;
+        head = root ;           // This is the new head, of the newly formed DLL
     else
-        root->left = prev , root->right = root ;
+    {
+        root->left = prev ;     // These two together form the bond :-
+        prev->right = root ;    // prev <===> root  ( doubly linked nodes of DLL )
+    }
 
-    prev = root ;
-    
-    bt_to_dll(root->right) ;
+    prev = root ;   // Update the current node, as the newly previous node, right before
+    // we call root->right OR root->next in the newly formed DLL
 
-    return head ;
+    bt_to_dll(root->right) ;    // Notice it doesn' return or store anything
+    // Just done to update the values, and form the DLL
+
+    return head ;   // Return the head of the newly formed DLL
 }
 
 // Driver Function
@@ -69,6 +75,7 @@ int main ()
     Node *root = new Node(10) ;
     root->left = new Node(5) , root->right = new Node(20) ;
     root->right->left = new Node(30) , root->right->right = new Node (35) ;
+    root->right->left->left = new Node (60) ;
 
     Node *head = bt_to_dll (root) ;
 
