@@ -5,7 +5,6 @@ NULL at the end. A circular linked list can be singly circular linked list or a 
 # include <bits/stdc++.h>
 using namespace std ;
 
-
 // Implementation
 /*
 To implement a circular singly linked list, we take an external pointer that points to the last
@@ -16,9 +15,9 @@ to the firs node.
 // Why have we taken a pointer that points to the last node instead of first node?
 /*
 For insertion of node in the beginning we need traverse the whole list. Also, for insertion at the
-end, the whole lsit has to traverseed. If instead of start pointer, we take a pointer to the last node
-then in both cases there won't be any need to traverse the whole list. So, insertion in the 
-beginning or at the end takes constant time irrespective of the end of the list
+end, the whole list has to traverseed. If instead of start pointer, we take a pointer to the last 
+node then in both cases there won't be any need to traverse the whole list. So, insertion in 
+the beginning or at the end takes constant time irrespective of the end of the list.
 */
 
 // Implementation of Circular Linked List :-
@@ -73,7 +72,6 @@ void traverse ( struct Node* last )
     // Traversing the list
     do
     {
-        /* code */
         cout << p -> data << " " ;
         p = p -> next ;
     } while (p != last -> next) ;   // p != head_ptr

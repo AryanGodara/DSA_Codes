@@ -13,7 +13,7 @@ Advantages of Doubly Linked Lists :-
 2. The delete operation in DLL is more efficient if the pointer to the node to be deleted is given.
 3. We can quickly insert a new node be
 4. In a singly linked list, to delete a node, a pointer to the previous node is needed. To get this
-   previous node, sometimes the lsit is traversed. In DLL, we can get the previous node using the
+   previous node, sometimes the list is traversed. In DLL, we can get the previous node using the
    previous pointer.
 
 Disadvantages of Doubly Linked Lists :-

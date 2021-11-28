@@ -1,6 +1,9 @@
 // A simple C/C++ program to introduce a linked list
+
 # include <bits/stdc++.h>
 using namespace std ;
+
+// Program to create a simple linked list with 3 nodes
 
 
 // Linked List Node
@@ -9,7 +12,6 @@ struct Node
     int data ;              // Data
     struct Node *next ;     // Pointer
 } ;
-
 
 // Function to print the linked list
 void printList ( Node *node )
@@ -22,7 +24,7 @@ void printList ( Node *node )
 }
 
 
-// Program to create a simple linked list with 3 nodes
+// Driver Function
 int main ()
 {
     struct Node *head = NULL , *second = NULL , *third = NULL ;
@@ -38,9 +40,9 @@ int main ()
         head         second         third 
             |             |             | 
             |             |             | 
-        +---+-----+     +----+----+     +----+----+ 
-        | # | # |       | # | # |       | # | # | 
-        +---+-----+     +----+----+     +----+----+ 
+        +---+----+     +----+----+     +----+----+ 
+        | # | #  |     | #  | #  |     |  # |  # | 
+        +---+----+     +----+----+     +----+----+ 
         
     # represents any random value. 
       
@@ -61,7 +63,7 @@ int main ()
             |             |             | 
             |             |             | 
         +---+---+     +----+----+     +-----+----+ 
-        | 1 | o------>| # | # |       | # | # | 
+        | 1 | o------>| #  | #  |     |  #  |  # | 
         +---+---+     +----+----+     +-----+----+     
     */
 
@@ -79,7 +81,7 @@ int main ()
             |             |             | 
             |             |             | 
         +---+---+     +---+---+     +----+----+ 
-        | 1 | o------>| 2 | o-----> | # | # | 
+        | 1 | o------>| 2 | o-----> |  # |  # | 
         +---+---+     +---+---+     +----+----+     
     */
 
@@ -97,7 +99,7 @@ int main ()
                 | 
                 | 
             +---+---+     +---+---+     +----+------+ 
-            | 1 | o----->| 2 | o-----> | 3 | NULL | 
+            | 1 | o-----> | 2 | o-----> | 3  | NULL | 
             +---+---+     +---+---+     +----+------+     
         
         
