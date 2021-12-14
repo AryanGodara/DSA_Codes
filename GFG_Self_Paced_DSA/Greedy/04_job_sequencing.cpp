@@ -17,10 +17,10 @@ using namespace std ;
 /*
     Greedy Algorithm Approach :-
     1. We sort the jobs in the decreasing order of their profits.
-    2. Initialize the rsult as first joob in the sorted list. Assign the latest possible slot.
+    2. Initialize the result as first job in the sorted list. Assign the latest possible slot.
     3. Do the following for the remaining (n-1) jobs.
         a. If this job can't be added, ignore it.
-        b. Else, add it to teh latest possible slot.
+        b. Else, add it to the latest possible slot.
 */
 
 bool cmp ( pair<int,int> a , pair<int,int> b )
