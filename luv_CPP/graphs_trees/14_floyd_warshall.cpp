@@ -30,14 +30,17 @@ int main ()
     }
 
     // Now, we have to go through all the levels (k) allowed
-
+    // Then, for all the levels, we have to find the min possible distance between i and j
     for ( int k = 1 ; k <= N ; k++ )
-    {
-        // For all the levels, we have to find the min possible distance between i and j
         for ( int i = 1 ; i <= N ; i++ )
             for ( int j = 1 ; j <= N ; j++ )
+            if ( dist[i][k] != INF && dist[k][j] != INF )   // Only if a valid path exists
                 dist[i][j] = min ( dist[i][j] , dist[i][k] + dist[k][j] ) ;
+
         // For each pair, if possible, we check if going from i to j through k, gives a smaller
         // route than the direct route
-    }
+
+        // If no path exists b/w i and j, then their dist will remain INF
+
+        // This algo handles -ve weights(unlike dijkstra), but doesn't handle -ve cycles
 }
