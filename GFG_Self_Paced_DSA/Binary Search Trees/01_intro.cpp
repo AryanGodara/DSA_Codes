@@ -82,9 +82,9 @@ Node *insert_gfg ( Node *root , int x ) // Returns the root node back
         return new Node(x) ;
 
     else if ( root->key > x )
-        root->left = insert_gfg(root->right,x) ;
+        root->left = insert_gfg(root->left,x) ;
     else if ( root->key < x )
-        root->right = insert_gfg(root->left,x) ;
+        root->right = insert_gfg(root->right,x) ;
     
     return root ;
 }
