@@ -5,17 +5,16 @@ const int N = 1e5 + 5 ;
 
 vector <bool> isPrime (N,true) ;
 
-void sieve ()
-{
-    isPrime[1] = isPrime[0] = false ;
+struct Node{
+    int data ;
+    Node *left , *right ;
 
-    for ( int i = 2 ; i < N ; i++ )
+    Node (int x)
     {
-        if ( isPrime[i] )
-            for ( int j = i+i ; j < N ; j += i )
-                isPrime[j] = false ;
+        data = x ;
+        left = right = NULL ;
     }
-}
+};
 
 int main() 
 {
@@ -23,58 +22,31 @@ int main()
     cin.tie(NULL) ;
     cout.tie(NULL) ;
 
-    sieve() ;
 
-    int T ;
-    cin >> T ;
-    
-    while ( T-- )
+    Node *root = new Node(5) ;
+    root->left = new Node(2) , root->right = new Node(7);
+    root->left->right = new Node(3) , root->left->right->left = new Node(4);
+    root->right->right = new Node(8);
+
+    queue <Node *> q ;
+    q.push(root);
+    vector <int> ret ;
+
+    while ( !q.empty() )
     {
-        // cout << "Test\n" ;
-        int n , k ;
-        cin >> n >> k ;
+        auto cur = q.front() ;
+        q.pop() ;
 
-        vector <int> a = {1} , b = {2} ;
+        ret.push_back(cur->data);
 
-        for ( int i = 3 ; i <= n ; i ++ )
-        {
-            if ( isPrime[i] && i*2>n )    // These prime nos. don't have any multiples here
-                a.push_back(i) ;
-            else
-                b.push_back(i) ;
-        }
-
-        // for ( auto &x : a )
-        //     cout << x << " " ;
-        // cout << endl ;
-
-        // for ( auto &x : b )
-        //     cout << x << " " ;
-        // cout << endl ;
-
-        if ( a.size()>=k || b.size() <= k )
-        {
-            cout << "Yes\n" ;
-            if ( a.size()  >= k )   // In this ase, we can just print k of these
-            {
-                // cout << "Case 1 \n" ;
-                for ( int i = 0 ; i < k ; i++ )
-                    cout << a[i] << " " ;
-                cout << endl ;
-            }
-            else if (  b.size() <= k )
-            {
-                // cout << "Case 2 \n" ;
-                for ( int i = 0 ; i < b.size() ; i++ )
-                    cout << b[i] << " " ;
-                for ( int i = 0 ; i < k-b.size() ; i++ )
-                    cout << a[i] << " " ;
-                cout << endl ;
-            }
-        }
-        else
-            cout << "No\n" ;
+        if ( cur->left )
+            q.push(cur->left);
+        if ( cur->right )
+            q.push(cur->right);
     }
+
+    for ( auto &x : ret )
+        cout << x << " " ;
 
 	return 0;
 }

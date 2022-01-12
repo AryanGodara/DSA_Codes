@@ -1,9 +1,6 @@
 # include <bits/stdc++.h>
 using namespace std ;
 
-/*
-*/
-
 // Node for BST
 struct Node
 {
@@ -33,6 +30,7 @@ bool search ( Node *root , int x )
     
     return false ;
 }
+
 // 2. Iterative
 bool search_iterative (Node *root , int x )
 {
@@ -75,6 +73,7 @@ void insert ( Node *root , int x )
     else
         insert(root->right,x) ;
 }
+
 // 2. Recursive GFG
 Node *insert_gfg ( Node *root , int x ) // Returns the root node back
 {
@@ -204,4 +203,3 @@ Node *ceil ( Node *root , int x )
 
     return res ;
 }
-
