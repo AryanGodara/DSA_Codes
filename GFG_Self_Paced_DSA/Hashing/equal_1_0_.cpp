@@ -16,7 +16,7 @@ int countSubarrWithEqualZeroAndOne(int arr[], int n)
 	// sum and increase count by 1 for this sum
 	// in 'um'. Adds '-1' when arr[i] == 0
 	for (int i = 0; i < n; i++) {
-		curr_sum += (arr[i] == 0) ? -1 : arr[i];
+		curr_sum += (arr[i] == 0) ? -1 : arr[i] ;	// 0: -1 , 1: 1 (So, sum of equal 0 and 1 == 0)
 		um[curr_sum]++;
 	}
 
@@ -44,8 +44,7 @@ int main()
 {
 	int arr[] = { 1, 0, 0, 1, 0, 1, 1 };
 	int n = sizeof(arr) / sizeof(arr[0]);
-	cout << "Count = "
-		<< countSubarrWithEqualZeroAndOne(arr, n);
+	cout << "Count = " << countSubarrWithEqualZeroAndOne(arr, n);
 	return 0;
 }
 

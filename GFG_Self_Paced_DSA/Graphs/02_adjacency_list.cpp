@@ -20,7 +20,7 @@ void addEdge ( vector <int> adj[] , int u , int v )
     adj[v].push_back(u) ;
 }
 
-void printGraph ( vector <int> adj[] , int V )  // A vector of integer arrays.
+void printGraph ( vector <int> adj[] , int V )  // A array of 'vector<int>' type.
 {
     for ( int i = 0 ; i < V ; i++ )
     {
@@ -35,7 +35,7 @@ void printGraph ( vector <int> adj[] , int V )  // A vector of integer arrays.
 int main ()
 {
     int V = 4 ;
-    vector <int> adj[V] ;   // A vector of int arrays, each of size V.
+    vector <int> adj[V] ;   // An array of 'vector<int> type', of size V.
 
     addEdge(adj,0,1) ;
     addEdge(adj,0,2) ;

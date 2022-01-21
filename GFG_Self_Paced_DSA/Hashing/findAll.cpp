@@ -71,12 +71,16 @@ void findAll ()
 
 int main ()
 {
+    ios_base :: sync_with_stdio(false) ;
+    cin.tie(NULL) ;
+    cout.tie(NULL) ;
+
     findAll() ; // Find all such numbers whose digits are from the set {1,2,3}
 
-    int t ; 
-    cin >> t ;  // Number of testcases
+    int T ; 
+    cin >> T ;  // Number of testcases
 
-    while ( t-- )
+    while ( T-- )
     {
         int n , flag = 0 ;
         cin >> n ;

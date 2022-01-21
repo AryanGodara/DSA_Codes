@@ -52,7 +52,7 @@ int main ()
 
     heap_sort ( arr , size ) ;
 
-    print( arr , __SIZEOF_FLOAT128__ ) ;
+    print( arr , size ) ;
 
     return 0 ;
 }

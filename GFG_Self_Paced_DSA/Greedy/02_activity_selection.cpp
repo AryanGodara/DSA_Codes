@@ -44,10 +44,7 @@ bool cmp ( pair<int,int> a , pair<int,int> b )
 
 bool overlaps ( pair<int,int> a , pair<int,int> b )
 {
-    if ( b.first >= a.second )  // The cur task starts, only after the prev one ends
-        return false ;
-    
-    return true ;
+    return b.first < a.second ;
 }
 
 int solve ( vector <pair<int,int>> arr )    // Greedy Approach
@@ -57,29 +54,37 @@ int solve ( vector <pair<int,int>> arr )    // Greedy Approach
     pair<int,int> soln = arr[0] ; // First activity has the lowest finish time, finished the earliest
     int count = 1 ; // We have already included the first activity in the solution
 
+    cout << arr[0].first << "," << arr[0].second << " " ;
+
     for ( int i = 1 ; i < arr.size() ; i++ )
     {
         if ( overlaps(soln,arr[i]))
             continue ;  // Ignore this
         else
         {
+            cout << arr[i].first << "," << arr[i].second << " " ;
             soln = arr[i] ; // We selected this for hte solution
             count++ ;
         }
     }
 
+    cout << endl ;
+
     return count ;
 }
-
 
 // Driver Function
 int main ()
 {
     vector <pair<int,int>> arr1 = { {12,25} , {10,20} , {20,30} } ;
     vector <pair<int,int>> arr2 = { {3,4} , {2,6} , {1,5} } ;
+    vector <pair<int,int>> arr3 = { {2,3} , {1,4} , {5,8} , {6,10} } ;
+    vector <pair<int,int>> arr4 = { {1,3} , {2,4} , {3,8} , {10,11} } ;
 
     cout << solve ( arr1 ) << endl ;
     cout << solve ( arr2 ) << endl ;
+    cout << solve ( arr3 ) << endl ;
+    cout << solve ( arr4 ) << endl ;
 
     return 0 ;
 }

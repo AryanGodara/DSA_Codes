@@ -58,7 +58,7 @@ using namespace std ;
         c. Left and right children as left and right, respectively
         d. Insert a new node into h
     
-    4. The only nod left in h is our required binary tree
+    4. The only node left in h is our required binary tree
 
     PRINTING THE BINARY TREE
 

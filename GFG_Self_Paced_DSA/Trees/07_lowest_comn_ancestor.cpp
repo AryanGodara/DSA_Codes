@@ -69,7 +69,7 @@ Node *lca_2 ( Node *root , int n1 , int n2 )
         return root ;
     
     Node *lca1 = lca_2(root->left,n1,n2) ;
-    Node *lca2 = lca_2(root->left,n1,n2) ;
+    Node *lca2 = lca_2(root->right,n1,n2) ;
 
     if ( lca1 != NULL && lca2 != NULL )
         return root ;   // left subtree contains one key, and right subtree contains another

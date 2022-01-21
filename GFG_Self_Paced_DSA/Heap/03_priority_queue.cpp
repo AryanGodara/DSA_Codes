@@ -91,7 +91,7 @@ int main ()
 
 /*
 Priority Queues are a type of container adaptors, specifically
-designed such that th efirst element of the queue is the greatest
+designed such that the efirst element of the queue is the greatest
 of all elements in the queue, and the elements are in non-increasing order
 (hence, we can see that each elemnt of the queue has a priority {fixed order}).
 
