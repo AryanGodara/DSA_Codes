@@ -1,0 +1,1 @@
+{"name":"Local: 03_city_&_firemen","url":"e:\\DSA\\CPP_Programs\\luv_CPP\\Disjoint Set Union\\03_city_&_firemen.cpp","tests":[{"id":1642926725589,"input":"4\n3 3 3 3\n2\n1 2\n4 1","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\CPP_Programs\\luv_CPP\\Disjoint Set Union\\03_city_&_firemen.cpp","group":"local","local":true}
