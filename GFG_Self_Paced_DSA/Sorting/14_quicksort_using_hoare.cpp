@@ -1,19 +1,21 @@
 # include <bits/stdc++.h>
 using namespace std ;
 
-//? Returns the new index of the pivot element after partitioning the array
+//? Returns the index of the "last element of left array" after partitioning the array
 int iPartition ( int arr[] , int l , int h )
 {
-    int pivot = arr[h] ;    //* Last element is taken as the pivot
-    int i = l-1 ;
+    int pivot = arr[l] ;    //* The first element is taken as the pivot
+    int i = l-1 , j = h+1 ;
 
-    for ( int j = l ; j < h ; j++ )
-        if ( arr[j] < pivot )
-            swap(arr[j],arr[++i]) ;
-    
-    swap(arr[++i],arr[h]) ;
+    while (true) {
+        do { i++ ; } while ( arr[i] < pivot ) ;
+        do { j-- ; } while ( arr[j] > pivot ) ;
 
-    return i ;  //* Return the position of the 'pivot' element
+        if ( i >= j )
+            return j ;
+        // Else
+        swap(arr[i],arr[j]) ;
+    }
 }
 
 //? Sorts the two halves of the array, after it's partitioned
@@ -28,7 +30,7 @@ void quicksort ( int arr[] , int l , int h )
 
        
         //TODO: So, we call quicksort for these two havles of the array
-        quicksort(arr,l,p-1) ;
+        quicksort(arr,l,p) ;
         quicksort(arr,p+1,h) ;
     }
 }
