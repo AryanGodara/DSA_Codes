@@ -94,6 +94,101 @@ void append ( struct Node** head_ref , int new_data )
     return  ;
 }
 
+Node *insertAtBeg ( Node *head , int data )
+{
+    Node *temp = new Node ;
+    temp->data = data ;
+
+    temp->next = head ;
+    if ( head != NULL )
+        head->prev = temp ;
+
+    return temp ;
+}
+
+Node *insertAtEnd ( Node *head , int data )
+{
+    Node *temp = new Node ;
+    temp->data = data ;
+
+    if ( head == NULL )
+        return temp ;
+    
+    Node *cur = head ;
+    while ( cur->next != NULL )
+        cur = cur->next ;
+    
+    cur->next = temp ;
+    temp->prev = cur ;
+
+    return head ;
+}
+
+Node *reverseDLL ( Node *head )
+{
+    if ( head == NULL || head->next == NULL )
+        return head ;
+
+    Node *cur = head , *prev = NULL ;
+
+    while ( cur != NULL )
+    {
+        Node *next = cur->next ;
+
+        cur->next = prev ;  // Switch the joints
+        cur->prev = next ;
+
+        prev = cur ; // Move prev forward
+        cur = next ; // move on to the next node
+    }
+
+    return prev ;   // The new head, of the reversed linked list
+}
+
+Node *delHead ( Node *head )
+{
+    if ( head == NULL )
+        return NULL ;
+    
+    if ( head->next == NULL )
+    {
+        delete head ;
+        return NULL ;
+    }
+    else
+    {
+        Node *temp = head ;
+        head = head->next ;
+        head->prev = NULL ;
+
+        delete temp ;
+        return head ;
+    }
+}
+
+Node *delLast ( Node *head )
+{
+    if ( head == NULL )
+        return NULL ;
+    
+    if ( head->next == NULL )   // Only 1 element in the DLL
+    {
+        delete head ;
+        return NULL ;
+    }
+    else
+    {
+        Node *cur = head ;
+        while ( cur->next != NULL )
+            cur = cur->next ;
+        
+        cur->prev->next = NULL ;
+        delete cur ;
+
+        return head ;
+    }
+}
+
 
 // Driver program to test above functions
 int main ()
@@ -117,4 +212,4 @@ int main ()
     printList(head) ;
 
     return 0 ;
-}
+}   
