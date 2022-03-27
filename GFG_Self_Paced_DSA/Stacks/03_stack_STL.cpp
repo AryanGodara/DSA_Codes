@@ -1,6 +1,7 @@
 // The C++ STL offers a built-in class named stack for implementing the stack data structure easily
 // and efficiently. This class provides almost all functions needed to perform the standard stack
 // operations like push() , pop() , peek() , remove() , etc.
+
 # include <bits/stdc++.h>
 using namespace std ;
 
