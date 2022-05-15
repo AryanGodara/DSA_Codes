@@ -3,7 +3,7 @@ using namespace std ;
 
 // Naive Algorithm
 /*
-    while ( there are untried paths )
+    while ( there are untried paths ) abcdef
     {
         generate_the_next_path()
             if ( this path has all blocks as non-zero )
