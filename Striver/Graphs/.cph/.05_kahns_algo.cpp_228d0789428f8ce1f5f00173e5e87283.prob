@@ -1,0 +1,1 @@
+{"name":"Local: 05_kahns_algo","url":"/home/aryan/DSA_Codes/Striver/Graphs/05_kahns_algo.cpp","tests":[{"id":1670493973183,"input":"6\n5 0\n4 0\n5 2\n2 3\n3 1\n4 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/aryan/DSA_Codes/Striver/Graphs/05_kahns_algo.cpp","group":"local","local":true}
