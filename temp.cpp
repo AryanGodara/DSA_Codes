@@ -33,8 +33,14 @@ int minPages ( vector<int> &arr, int n, int k )
 
 int main () 
 {
-    vector<int> arr = {10,20,10,30} ;
-    int k = 2 , n = 4 ;
+    int n , k ;
+    cin >> n >> K ;
+    vector <int> arr(n) ;
+    for ( int i = 0 ; i < n ; i++ )
+        cin >> arr[i] ;
+    
+//     vector<int> arr = {10,20,10,30} ;
+    int k = 2 ;//, n = 4 ;
 
     cout << minPages(arr,n,k) << endl ;
 
