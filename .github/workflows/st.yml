@@ -12,6 +12,6 @@ jobs:
       - uses: schemathesis/action@v1
         with:
           # API schema location
-          schema: 'http://127.0.0.1:5001/openapi.json'
+          schema: 'https://example.schemathesis.io/openapi.json'
           # Set your token from secrets
           token: ${{ secrets.SCHEMATHESIS_TOKEN }}
