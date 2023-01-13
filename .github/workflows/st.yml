@@ -9,6 +9,7 @@ jobs:
   api-tests:
     runs-on: ubuntu-20.04
     steps:
+      - run: echo hello world
       - uses: schemathesis/action@v1
         with:
           # API schema location
