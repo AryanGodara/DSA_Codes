@@ -9,8 +9,10 @@ jobs:
   api-tests:
     runs-on: ubuntu-20.04
     steps:
-      - run: echo hello world
-      - uses: schemathesis/action@v1
+      - name: he wol
+        run: echo hello world
+      - name: rest of work
+        uses: schemathesis/action@v1
         with:
           # API schema location
           schema: 'https://example.schemathesis.io/openapi.json'
