@@ -18,7 +18,7 @@ int minPages ( vector<int> &arr, int n, int k )
         return arr[0] ; // Only one possible solution
 
     int ans = INT_MAX ;
-    // Ans = minimum possible values of the 'max' pages a student will have to read
+    // Ans = minimum possible value of the 'max' pages a student will have to read
 
     for ( int i = 1 ; i < n ; i++ )
         ans = min ( ans , max(minPages(arr,i,k-1), sum(arr,i,n-1) )) ;
